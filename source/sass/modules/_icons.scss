@@ -1,0 +1,21 @@
+/******************************************************************************
+ * Icons
+*******************************************************************************/
+.icon-wrap {
+    cursor: pointer;
+    display: inline-block;
+    margin: -20px;
+    padding: 20px;
+    }
+.icon {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+
+    span {
+        display: inline-block;
+        }
+}

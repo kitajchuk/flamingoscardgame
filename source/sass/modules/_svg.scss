@@ -1,0 +1,22 @@
+._svg {
+    transition: fill $base-duration $ease;
+
+    path {
+        transition: fill $base-duration $ease;
+    }
+}
+._svg--twitter {
+    fill: $charcoal;
+    height: 32px;
+    width: 40px;
+}
+._svg--facebook {
+    fill: $charcoal;
+    height: 32px;
+    width: 16px;
+}
+._svg--instagram {
+    fill: $charcoal;
+    height: 32px;
+    width: 32px;
+}

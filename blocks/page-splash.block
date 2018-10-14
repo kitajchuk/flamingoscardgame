@@ -1,0 +1,28 @@
+<div class="splash">
+    <div class="splash__image">
+        {.section collection.mainImage}
+            {@|apply image.block}
+        {.end}
+    </div>
+    <div class="splash__text">
+        <h1>A Card Game<br />Coming 2019</h1>
+    </div>
+    <div class="splash__signup signup -exp">
+        <div class="sqs-block-newsletter">
+            <div class="sqs-block-content"></div>
+        </div>
+    </div>
+    <div class="splash__social -expb">
+        {.repeated section website.socialAccounts}
+            <a href="{profileUrl}" target="_blank" class="social-link social-link--{serviceName}">
+                {.equal? serviceName "instagram"}
+                    {@|apply svg-instagram.block}
+                {.or equal? serviceName "facebook"}
+                    {@|apply svg-facebook.block}
+                {.or equal? serviceName "twitter"}
+                    {@|apply svg-twitter.block}
+                {.end}
+            </a>
+        {.end}
+    </div>
+</div>

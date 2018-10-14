@@ -1,0 +1,68 @@
+.main {}
+
+
+
+// Splash
+.splash {
+    text-align: center;
+}
+.splash__image {
+    @include respond( $mobile-breakpoint ) {
+        @include wrap();
+    }
+
+    .media {
+        max-width: 768px;
+        display: inline-block;
+    }
+}
+
+
+
+// Social
+.social-link {
+    margin: 0 16px;
+}
+
+
+
+// Signup
+.signup {
+    @include respond( $mobile-breakpoint ) {
+        @include wrap();
+    }
+}
+.signup__form {
+    &.is-success {
+        .signup__success {
+            display: block;
+        }
+        .signup__entry {
+            display: none;
+        }
+    }
+}
+.signup__success {
+    display: none;
+
+    .is-success & {
+        display: block;
+    }
+}
+.signup__entry {
+    .is-success & {
+        display: none;
+    }
+}
+.signup__input {
+    @include respond( $mobile-breakpoint ) {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}
+.signup__btn {
+    @include respond( $mobile-breakpoint ) {
+        width: 100%;
+    }
+}

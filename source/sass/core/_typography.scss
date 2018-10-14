@@ -1,0 +1,68 @@
+/******************************************************************************
+ * Paragraphs
+*******************************************************************************/
+p, .p {
+    @include p();
+}
+
+
+/******************************************************************************
+ * Buttons
+*******************************************************************************/
+.btn {
+    @include p();
+    background-color: $pink;
+    color: $white;
+    -webkit-appearance: none;
+    outline: 0;
+    border: 0;
+    padding: 20px 30px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+
+    @include respond( $mobile-breakpoint ) {
+        height: 54px;
+    }
+}
+.btn--pink {
+    background-color: $pink;
+}
+
+
+.inp {
+    @include p();
+    -webkit-appearance: none;
+    outline: 0;
+    border: 1px solid $pink;
+    background-color: $white;
+    color: $grey;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 0;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+
+    @include respond( $mobile-breakpoint ) {
+        height: 54px;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $grey;
+    }
+}
+
+
+/******************************************************************************
+ * Headlines
+*******************************************************************************/
+h1, .h1, .h1 p {
+    @include h1();
+}
+h2, .h2 {}
+h3, .h3 {}
