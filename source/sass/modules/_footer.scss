@@ -1,1 +1,19 @@
-.footer {}
+.footer {
+    text-align: center;
+    background-color: $paradise;
+    color: $white;
+
+    ._svg {
+        fill: $white;
+    }
+
+    .inp {
+        border-color: $deepsea;
+        color: $ocean;
+        @include placeholder( $ocean );
+    }
+
+    .btn {
+        background-color: $deepsea;
+    }
+}

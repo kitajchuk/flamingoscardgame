@@ -1,6 +1,7 @@
 import * as core from "../core";
 import ImageController from "./controllers/ImageController";
 import SignupController from "./controllers/SignupController";
+import ViewController from "./controllers/ViewController";
 
 
 /**
@@ -54,7 +55,8 @@ class Controllers {
     exec () {
         this.controllers = [];
 
-        this.push( "signup", this.element.find( ".sqs-block-newsletter .sqs-block-content" ), SignupController, true );
+        this.push( "view", core.dom.body.find( ".js-view" ), ViewController, true );
+        this.push( "signup", core.dom.body.find( ".sqs-block-newsletter .sqs-block-content" ), SignupController, true );
 
         this.images = this.element.find( core.config.lazyImageSelector );
         this.imageController = new ImageController( this.images );

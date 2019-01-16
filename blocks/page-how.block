@@ -1,0 +1,39 @@
+<div class="how2">
+    <div class="how2__masthead masthead -wrap -exp2">
+        <div class="h1">How it Works</div>
+    </div>
+    <div class="how2__collect">
+        <div class="h1 -wrap">Be the first to collect<br /> <span class="-pink">3 FlamingOs!</span></div>
+        <div class="fpo -expt -exp2b">
+            <div class="h1">FPO::O-Cards</div>
+        </div>
+    </div>
+    <div class="how2__pair">
+        <div class="h1 -wrap">Pair <span class="-pink">Mingo&rsquo;s</span> to<br /> collect <span class="-pink">Shrimp</span>.</div>
+        <div class="fpo -expt -exp2b">
+            <div class="h1">FPO::Mingos</div>
+        </div>
+    </div>
+    <div class="how2__earn">
+        <div class="h1 -wrap">10 <span class="-pink">Shrimp</span> points<br /> earns 1 <span class="-pink">O card</span>.</div>
+        <div class="fpo -expt -exp2b">
+            <div class="h1">FPO::Shrimp</div>
+        </div>
+    </div>
+    <div class="how2__helpers">
+        <div class="h1 -wrap">Look for <span class="-pink">helping cards</span>,<br /> but beware some of these<br /> can <span class="-pink">set you back</span>.</div>
+        <div class="fpo -expt -exp2b">
+            <div class="h1">FPO::Helpers</div>
+        </div>
+    </div>
+    <div class="how2__mechs">
+        <div class="h1 -wrap">Use these cards<br /> to <span class="-pink">steal and block</span><br /> another player.</div>
+        <div class="fpo -expt -exp2b">
+            <div class="h1">FPO::Mechs</div>
+        </div>
+    </div>
+    <div class="how2__rules -exp2b -wrap">
+        <div class="h1 -expb">Check out the full<br /> <span class="-pink">PDF rulebook</span> here.</div>
+        <a class="btn btn--pink" href="#" target="_blank">Download Rules PDF</a>
+    </div>
+</div>

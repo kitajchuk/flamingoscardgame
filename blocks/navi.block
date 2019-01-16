@@ -1,0 +1,15 @@
+<nav class="navi js-navi" data-content-field="navigation-navi">
+    {.repeated section items}
+        {.section collection}
+            {.var @slug title|slugify}
+            {.var @url fullUrl}
+            <a class="navi__a js-navi-a navi__a--{@slug} js-navi--{@slug} p" href="{@url}">{title}</a>
+        {.end}
+        {.section externalLink}
+            {.var @slug title|slugify}
+            {.var @url url}
+            <a class="navi__a js-navi-a navi__a--{@slug} js-navi--{@slug} p" href="{@url}" target="_blank">{title}</a>
+        {.end}
+    {.end}
+    <!--<a class="navi__a js-navi-a navi__a--cart js-store-go-to-checkout p" href="#">Cart (&nbsp;<span class="js-store-cart-global"></span>&nbsp;)</a>-->
+</nav>

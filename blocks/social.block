@@ -1,0 +1,13 @@
+<div class="social">
+    {.repeated section website.socialAccounts}
+        <a href="{profileUrl}" target="_blank" class="social-link social-link--{serviceName}">
+            {.equal? serviceName "instagram"}
+                {@|apply svg-instagram.block}
+            {.or equal? serviceName "facebook"}
+                {@|apply svg-facebook.block}
+            {.or equal? serviceName "twitter"}
+                {@|apply svg-twitter.block}
+            {.end}
+        </a>
+    {.end}
+</div>

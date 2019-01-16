@@ -6,17 +6,39 @@
     }
 }
 ._svg--twitter {
-    fill: $charcoal;
+    fill: $pink;
     height: 32px;
     width: 40px;
 }
 ._svg--facebook {
-    fill: $charcoal;
+    fill: $pink;
     height: 32px;
     width: 16px;
 }
 ._svg--instagram {
-    fill: $charcoal;
+    fill: $pink;
     height: 32px;
     width: 32px;
+}
+._svg--logo-header {
+    width: 220px;
+    height: 52px;
+
+    @include respond( $mobile-breakpoint ) {
+        transform: scale( 0.5 );
+        margin-left: -55px;
+    }
+}
+._svg--logo-footer {
+    width: 220px;
+    height: 52px;
+
+    @include respond( $mobile-breakpoint ) {
+        transform: scale( 0.75 );
+    }
+}
+._svg--arrow-left,
+._svg--arrow-right {
+    height: 40px;
+    width: 40px;
 }

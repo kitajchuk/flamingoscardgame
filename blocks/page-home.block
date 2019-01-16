@@ -1,0 +1,28 @@
+<div class="home">
+    <div class="home__masthead masthead -wrap -exp2">
+        <div class="h1">Get tropical with <span class="-pink">FlamingOs</span>!<br /> Pair, swoop, block, and steal to win!</div>
+    </div>
+    <div class="home__gallery">
+        <div class="decks js-decks js-view" data-url="/decks/" data-uid="decks" data-component="Decks"></div>
+    </div>
+    <div class="home__action -wrap -exp2">
+        <div class="h1">A card game launching on<br /> <span class="-pink">Kickstarter March 19th!</span></div>
+        <div class="-expt">
+            {@|apply signup.block}
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="home__events -wrap -exp2">
+        <div class="h1"><span class="-teal">Save the Date!</span><br /> Play testing in Portland, OR<br /> this January and February.</div>
+        <div class="fpo -exp2t">
+            <div class="h1">FPO::Events</div>
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class="home__comiccons -wrap -exp2">
+        <div class="h1"><span class="-pink">Appearing at<br /> Comic Con!</span>Find FlamingOs at the<br /> <span class="-pink">Popsicle Propaganda</span> booth<br /> and discover <span class="-pink">art and comics</span> by<br /> FlamingOs artist — <a class="-pink" href="https://www.instagram.com/kitajchuk/" target="_blank">Kitajchuk</a>.</div>
+        <div class="fpo -exp2t">
+            <div class="h1">FPO::ComicCons</div>
+        </div>
+    </div>
+</div>

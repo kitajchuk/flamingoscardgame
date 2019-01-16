@@ -3,6 +3,12 @@
 *******************************************************************************/
 p, .p {
     @include p();
+
+    br {
+        @include respond( $mobile-breakpoint  ) {
+            display: none;
+        }
+    }
 }
 
 
@@ -11,8 +17,10 @@ p, .p {
 *******************************************************************************/
 .btn {
     @include p();
+    line-height: $no-line;
     background-color: $pink;
     color: $white;
+    cursor: pointer;
     -webkit-appearance: none;
     outline: 0;
     border: 0;
@@ -26,20 +34,25 @@ p, .p {
 
     @include respond( $mobile-breakpoint ) {
         height: 54px;
+        font-size: $m-size;
     }
 }
 .btn--pink {
     background-color: $pink;
 }
+.btn--teal {
+    background-color: $teal;
+}
 
 
 .inp {
     @include p();
+    line-height: $no-line;
     -webkit-appearance: none;
     outline: 0;
     border: 1px solid $pink;
     background-color: $white;
-    color: $grey;
+    color: $paradise;
     padding: 20px;
     width: 100%;
     max-width: 320px;
@@ -50,11 +63,10 @@ p, .p {
 
     @include respond( $mobile-breakpoint ) {
         height: 54px;
+        font-size: $m-size;
     }
 
-    &::-webkit-input-placeholder {
-        color: $grey;
-    }
+    @include placeholder( $paradise );
 }
 
 
@@ -63,6 +75,20 @@ p, .p {
 *******************************************************************************/
 h1, .h1, .h1 p {
     @include h1();
+
+    br {
+        @include respond( $mobile-breakpoint  ) {
+            display: none;
+        }
+    }
 }
-h2, .h2 {}
+h2, .h2, .h2 p {
+    @include h2();
+
+    br {
+        @include respond( $mobile-breakpoint  ) {
+            display: none;
+        }
+    }
+}
 h3, .h3 {}

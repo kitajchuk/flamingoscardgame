@@ -3,17 +3,79 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/assets/touch/apple-touch-icon-57x57.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/assets/touch/apple-touch-icon-60x60.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/assets/touch/apple-touch-icon-72x72.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/assets/touch/apple-touch-icon-76x76.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/assets/touch/apple-touch-icon-114x114.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/touch/apple-touch-icon-120x120.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/assets/touch/apple-touch-icon-144x144.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/touch/apple-touch-icon-152x152.png?v={squarespace.template-revision}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/touch/apple-touch-icon-180x180.png?v={squarespace.template-revision}" />
+        <link rel="icon" type="image/png" href="/assets/touch/android-chrome-192x192.png?v={squarespace.template-revision}" sizes="192x192" />
+        <meta name="msapplication-square70x70logo" content="/assets/touch/smalltile.png?v={squarespace.template-revision}" />
+        <meta name="msapplication-square150x150logo" content="/assets/touch/mediumtile.png?v={squarespace.template-revision}" />
+        <meta name="msapplication-wide310x150logo" content="/assets/touch/widetile.png?v={squarespace.template-revision}" />
+        <meta name="msapplication-square310x310logo" content="/assets/touch/largetile.png?v={squarespace.template-revision}" />
         {squarespace-headers}
     </head>
     <body class="-fzero">
-        <main class="main js-main" data-content-field="main-content" data-website-id="{website.id}" {.section collection}data-collection-id="{collection.id}" data-collection-title="{.if collection.homepage}{website.siteTitle}{.or}{collection.title} – {website.siteTitle}{.end}"{.end} {.section item}data-item-id="{item.id}" data-item-title="{item.title} – {collection.title} – {website.siteTitle}"{.end}>
-            {# Splash #}
-            {.equal? collection.id "5bc3c79a652deab94f231cdb"}
+        {# Splash #}
+        {.equal? collection.id "5bc3c79a652deab94f231cdb"}
+            <main class="main js-main" data-content-field="main-content" data-website-id="{website.id}" {.section collection}data-collection-id="{collection.id}" data-collection-title="{.if collection.homepage}{website.siteTitle}{.or}{collection.title} – {website.siteTitle}{.end}"{.end} {.section item}data-item-id="{item.id}" data-item-title="{item.title} – {collection.title} – {website.siteTitle}"{.end}>
                 {@|apply page-splash.block}
-            {.or}
-                {squarespace.main-content}
-            {.end}
-        </main>
+            </main>
+        {.or}
+            <header class="header js-header -wrapn">
+                <div class="header__wrap">
+                    <div class="header__logo">
+                        <a href="/">
+                            {@|apply svg-logo-header.block}
+                        </a>
+                    </div>
+                    <div class="header__navi">
+                        <squarespace:navigation navigationId="navi" template="navi" />
+                    </div>
+                </div>
+            </header>
+            <main class="main js-main" data-content-field="main-content" data-website-id="{website.id}" {.section collection}data-collection-id="{collection.id}" data-collection-title="{.if collection.homepage}{website.siteTitle}{.or}{collection.title} – {website.siteTitle}{.end}"{.end} {.section item}data-item-id="{item.id}" data-item-title="{item.title} – {collection.title} – {website.siteTitle}"{.end}>
+                {# Home #}
+                {.equal? collection.id "5c3e9316562fa7371d13febb"}
+                    {@|apply page-home.block}
+                {# Contact #}
+                {.or equal? collection.id "5c044e66562fa76e5e836cab"}
+                    {@|apply page-contact.block}
+                {# How it Works #}
+                {.or equal? collection.id "5c3e691e4fa51a1df8424b40"}
+                    {@|apply page-how.block}
+                {.or}
+                    {squarespace.main-content}
+                {.end}
+            </main>
+            <footer class="footer js-footer -wrap -exp2">
+                <div class="footer__signup">
+                    {@|apply signup.block}
+                </div>
+                <div class="footer__social -exp2">
+                    {@|apply social.block}
+                </div>
+                <div class="footer__copyright">
+                    {@|apply svg-logo-footer.block}
+                    <div class="p -expt">Copyright Caitlin &amp; Brandon Kitajchuk.<br /> All rights reserved.</div>
+                </div>
+                <div class="footer__fb -expt">
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-like" data-href="https://www.facebook.com/flamingoscardgame/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                </div>
+            </footer>
+        {.end}
         <script type="text/javascript" src="/scripts/app.js?v={squarespace.template-revision}"></script>
         {squarespace-footers}
     </body>

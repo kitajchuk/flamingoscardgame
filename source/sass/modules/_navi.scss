@@ -1,1 +1,33 @@
 .navi {}
+.navi__a {
+    padding: 0 10px;
+    transition: color $base-duration $ease;
+
+    &.is-active {
+        text-decoration: line-through;
+    }
+
+    .is-navi-flip & {
+        color: $white;
+    }
+
+    &:last-child {
+        padding-right: 0;
+    }
+
+    @include respond( $mobile-breakpoint ) {
+        font-size: $m-size;
+    }
+}
+// .navi__a--shop {
+//     padding-right: 0;
+// }
+// .navi__a--cart {
+//     display: none;
+//     padding-right: 0;
+//
+//     &.is-activated {
+//         display: inline-block;
+//         text-decoration: none;
+//     }
+// }

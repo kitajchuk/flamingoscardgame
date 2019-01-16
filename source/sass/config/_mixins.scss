@@ -23,13 +23,29 @@
     font-size: $p-size;
     line-height: $p-line;
     @include font-family();
+
+    @include respond( $mobile-breakpoint ) {
+        font-size: $m-size;
+    }
 }
 @mixin h1() {
     font-size: $h1-size;
     line-height: $h1-line;
     @include font-family();
+
+    @include respond( $mobile-breakpoint ) {
+        font-size: $h2-size;
+    }
 }
-@mixin h2() {}
+@mixin h2() {
+    font-size: $h2-size;
+    line-height: $h2-line;
+    @include font-family();
+
+    @include respond( $mobile-breakpoint ) {
+        font-size: $p-size;
+    }
+}
 @mixin h3() {}
 
 
@@ -47,9 +63,35 @@
         @content;
     }
 }
+@mixin placeholder( $color ) {
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: $color;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+    }
+    &::placeholder { /* Future standard */
+        color: $color;
+    }
+}
 @mixin wrap() {
     padding-left: $padding-1;
     padding-right: $padding-1;
+}
+@mixin wrapn() {
+    padding-left: $padding-n;
+    padding-right: $padding-n;
+
+    @include respond( $mobile-breakpoint ) {
+        padding-left: $padding-1;
+        padding-right: $padding-1;
+    }
 }
 @mixin exp() {
     padding-top: $expander-1;
@@ -67,6 +109,13 @@
     @include respond( $mobile-breakpoint ) {
         padding-top: $expander-2 + $expander-1;
         padding-bottom: $expander-2 + $expander-1;
+    }
+}
+@mixin expb() {
+    padding-bottom: $expander-1;
+
+    @include respond( $mobile-breakpoint ) {
+        padding-bottom: $expander-2;
     }
 }
 

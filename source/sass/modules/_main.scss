@@ -1,19 +1,222 @@
-.main {}
-
-
-
-// Splash
-.splash {
+.main {
+    padding-top: $header-height;
+    transition: opacity $base-duration $ease;
+    overflow: hidden;
     text-align: center;
-}
-.splash__image {
-    @include respond( $mobile-breakpoint ) {
-        @include wrap();
+
+    .is-tranny & {
+        opacity: 0;
     }
 
-    .media {
-        max-width: 768px;
-        display: inline-block;
+    @include respond( $mobile-breakpoint ) {
+        padding-top: $header-height-mobile;
+    }
+}
+
+
+
+.fpo {
+    border: 1px solid $grey;
+    color: $grey;
+}
+
+
+
+.decks {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    // overflow-y: hidden;
+    // overflow-x: hidden;
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+}
+.decks__belt {
+    transition: transform $base-duration $ease;
+    transform: translate3d( 50vw, 0, 0 );
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.decks__navi {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translate3d( 0, -50%, 0 );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.decks__left,
+.decks__right {
+    pointer-events: auto;
+    cursor: pointer;
+    transition: opacity $base-duration $ease;
+}
+.decks__left {
+    .no-left & {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+}
+.decks__right {
+    .no-right & {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+}
+.decks__deck {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &[data-deck="Mingo"] {
+        color: $tropical;
+    }
+}
+.decks__card {
+    display: inline-block;
+    width: 320px;
+    padding: 0 ($baseunit);
+    box-sizing: content-box;
+    white-space: normal;
+    opacity: 0.5;
+    transform: translate3d( 0, 0, 0 );
+    transition: opacity $base-duration $ease,
+                transform $base-duration $ease;
+
+    .h2 {
+        font-size: $p-size;
+    }
+    .p, p {
+        font-size: $m-size;
+    }
+
+    &.is-active {
+        opacity: 1;
+        transform: scale( 1.28 );
+    }
+
+    &[data-card="pop-mingo"] {
+        .h2 {
+            color: $sunset;
+        }
+    }
+    &[data-card="blue-crab"] {
+        .h2 {
+            color: $deepsea;
+        }
+        .p {
+            color: $ocean;
+        }
+    }
+    &[data-card="pelican"],
+    &[data-card="spoiled-shrimp"] {
+        .h2 {
+            color: $beachtowel;
+        }
+        .p {
+            color: $seafoam;
+        }
+    }
+    &[data-card="shark"] {
+        .h2 {
+            color: $black;
+        }
+        .p {
+            color: $grey-dark;
+        }
+    }
+    &[data-card="seagull"] {
+        .h2 {
+            color: $deepsea;
+        }
+        .p {
+            color: $grey-dark;
+        }
+    }
+    &[data-card="shrimp"],
+    &[data-card="jumbo-shrimp"],
+    &[data-card="golden-shrimp"] {
+        .h2 {
+            color: $heatwave;
+        }
+        .p {
+            color: $sunrise;
+        }
+    }
+}
+.deck__card__graphic {}
+.deck__card__lockup {
+    transform: translate3d( 0, -$baseunit, 0 );
+}
+
+
+
+.hr {
+    background-color: $grey;
+    height: 1px;
+    width: 100%;
+}
+
+
+
+.home {}
+.home__comiccons {
+    .h1 {
+        span:first-child {
+            display: block;
+            @include expb();
+        }
+    }
+}
+
+
+
+.contact {
+    text-align: center;
+}
+.contact__form {
+    display: inline-block;
+    max-width: 480px;
+    width: 100%;
+
+    &.is-success {
+        .contact__form__success {
+            display: block;
+        }
+        .contact__form__body {
+            display: none;
+        }
+    }
+
+    .inp {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.contact__form__success {
+    display: none;
+
+    .is-success & {
+        display: block;
+    }
+}
+.contact__form__body {
+    .is-success & {
+        display: none;
+    }
+}
+.contact__submit {
+    text-align: right;
+
+    .btn {
+        width: 160px;
     }
 }
 
@@ -30,6 +233,10 @@
 .signup {
     @include respond( $mobile-breakpoint ) {
         @include wrap();
+    }
+
+    .h2 {
+        padding-top: $baseunit / 2;;
     }
 }
 .signup__form {
@@ -64,5 +271,22 @@
 .signup__btn {
     @include respond( $mobile-breakpoint ) {
         width: 100%;
+    }
+}
+
+
+
+// Splash
+.splash {
+    text-align: center;
+}
+.splash__image {
+    @include respond( $mobile-breakpoint ) {
+        @include wrap();
+    }
+
+    .media {
+        max-width: 768px;
+        display: inline-block;
     }
 }

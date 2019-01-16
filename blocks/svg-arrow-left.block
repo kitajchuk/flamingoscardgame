@@ -1,0 +1,12 @@
+<svg class="_svg _svg--arrow-left">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Gallery-UI" fill-rule="nonzero">
+            <g id="Arrow-Left">
+                <g transform="translate(20.000000, 20.000000) rotate(-180.000000) translate(-20.000000, -20.000000) ">
+                    <circle id="Oval" fill="#EA455A" cx="20" cy="20" r="20"></circle>
+                    <polygon id="Triangle" fill="#FFFFFF" transform="translate(22.291667, 20.000000) rotate(-270.000000) translate(-22.291667, -20.000000) " points="22.2916667 13.3333333 32.2916667 26.6666667 12.2916667 26.6666667"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

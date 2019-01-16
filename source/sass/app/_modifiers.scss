@@ -4,6 +4,9 @@
 .-wrap {
     @include wrap();
 }
+.-wrapn {
+    @include wrapn();
+}
 .-exp {
     @include exp();
 }
@@ -15,11 +18,7 @@
     }
 }
 .-expb {
-    padding-bottom: $expander-1;
-
-    @include respond( $mobile-breakpoint ) {
-        padding-bottom: $expander-2;
-    }
+    @include expb();
 }
 .-exp2 {
     @include exp2();
@@ -94,3 +93,12 @@
 .-fzero {
     font-size: 0;
     }
+.-pink {
+    color: $pink;
+}
+a.-pink {
+    border-bottom: 3px solid $pink;
+}
+.-teal {
+    color: $teal;
+}

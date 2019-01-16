@@ -1,1 +1,36 @@
-.header {}
+.header {
+    align-items: center;
+    display: flex;
+    height: $header-height;
+    left: 0;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    width: 100%;
+    z-index: $z_layer_header;
+    transform: translate3d( 0, 0, 0 );
+    transition: opacity $base-duration $ease,
+                transform $base-duration $ease;
+
+    @include respond( $mobile-breakpoint ) {
+        height: $header-height-mobile;
+    }
+}
+.header__wrap {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+.header__logo,
+.header__navi {
+    pointer-events: auto;
+}
+.header__logo {
+    max-width: 220px;
+
+    @include respond( $mobile-breakpoint ) {
+        max-width: 110px;
+    }
+}
