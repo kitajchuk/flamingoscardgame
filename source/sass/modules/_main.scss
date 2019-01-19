@@ -22,6 +22,62 @@
 
 
 
+.events {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 (-($padding-1 / 2));
+
+    // @include respond( $break-laptop-medium ) {
+    //     justify-content: space-around;
+    // }
+}
+.events__listing {
+    display: inline-block;
+    width: 100%;
+    max-width: 336px;
+    margin: 0 ($padding-1 / 2);
+
+    @include respond( $break-laptop-medium - 1px ) {
+        .h2 p {
+            @include p();
+        }
+    }
+
+    @include respond( $break-tablet-medium ) {
+        width: 336px;
+    }
+
+    @include respond( 850px ) {
+        max-width: 336px;
+    }
+
+    @include respond( $mobile-breakpoint ) {
+        max-width: 256px;
+    }
+
+    &:nth-child( 3 ) {
+        @include respond( 1399px ) {
+            margin-top: $baseunit * 2;
+        }
+    }
+
+
+
+    &:nth-child( 2 ),
+    &:nth-child( 3 ) {
+        @include respond( 850px ) {
+            margin-top: $baseunit * 2;
+        }
+    }
+}
+.events__listing__info {
+    padding: $baseunit 0;
+}
+
+
+
 .decks {
     display: flex;
     align-items: center;
@@ -87,6 +143,16 @@
     transform: translate3d( 0, 0, 0 );
     transition: opacity $base-duration $ease,
                 transform $base-duration $ease;
+
+    @include respond( $break-tablet-full ) {
+        width: 224px;
+        padding: 0 ($baseunit * 2);
+    }
+
+    @include respond( $break-mobile-medium ) {
+        width: 192px;
+        padding: 0 ($baseunit);
+    }
 
     .h2 {
         font-size: $p-size;
@@ -165,6 +231,11 @@
 
 
 .home {}
+.home__events {
+    .btn {
+        background-color: $teal;
+    }
+}
 .home__comiccons {
     .h1 {
         span:first-child {

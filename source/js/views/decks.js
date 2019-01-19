@@ -1,7 +1,7 @@
-export default ( json ) => {
+export default ( view ) => {
     return `
         <div class="decks__belt js-decks-belt">
-            ${json.collection.collections.map(( deck ) => {
+            ${view.json.collection.collections.map(( deck ) => {
                 return `
                     <div class="decks__deck" data-deck="${deck.title}">
                         ${deck.items.map(( card ) => {

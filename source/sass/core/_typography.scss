@@ -31,6 +31,7 @@ p, .p {
     height: 60px;
     display: inline-block;
     vertical-align: middle;
+    box-sizing: border-box;
 
     @include respond( $mobile-breakpoint ) {
         height: 54px;

@@ -1,5 +1,6 @@
 // import $ from "properjs-hobo";
 import * as core from "../../core";
+import ResizeController from "properjs-resizecontroller";
 
 
 
@@ -11,6 +12,17 @@ class Decks {
         this.right = this.view.element.find( ".js-decks-right" );
         this.left = this.view.element.find( ".js-decks-left" );
         this.cards = this.view.element.find( ".js-decks-card" );
+        this.resizer = new ResizeController();
+        this.breaks = {
+            tablet: {
+                width: 1280,
+                hit: false
+            },
+            mobile: {
+                width: 480,
+                hit: false
+            }
+        };
 
         this.bind();
         this.move();
@@ -18,6 +30,28 @@ class Decks {
 
 
     bind () {
+        this.resizer.on( "resize", () => {
+            if ( ((window.innerWidth < this.breaks.tablet.width) && !this.breaks.tablet.hit) ) {
+                this.breaks.tablet.hit = true;
+                this.move();
+            }
+
+            if ( (window.innerWidth > this.breaks.tablet.width) && this.breaks.tablet.hit ) {
+                this.breaks.tablet.hit = false;
+                this.move();
+            }
+
+            if ( ((window.innerWidth < this.breaks.mobile.width) && !this.breaks.mobile.hit) ) {
+                this.breaks.mobile.hit = true;
+                this.move();
+            }
+
+            if ( (window.innerWidth > this.breaks.mobile.width) && this.breaks.mobile.hit ) {
+                this.breaks.mobile.hit = false;
+                this.move();
+            }
+        });
+
         this.left.on( "click", () => {
             if ( this.curr === 0 ) {
                 this.view.element.addClass( "no-left" );
@@ -50,8 +84,7 @@ class Decks {
 
     move () {
         const card = this.cards.eq( this.curr );
-        const bounds = card[ 0 ].getBoundingClientRect();
-        const windowHalf = (window.innerWidth / 2);
+        const bounds = this.cards.not( ".is-active" )[ 0 ].getBoundingClientRect();
 
         this.cards.removeClass( "is-active" );
         card.addClass( "is-active" );
@@ -67,7 +100,9 @@ class Decks {
     }
 
 
-    destroy () {}
+    destroy () {
+        this.resizer.destroy();
+    }
 }
 
 

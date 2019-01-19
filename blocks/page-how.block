@@ -34,6 +34,6 @@
     </div>
     <div class="how2__rules -exp2b -wrap">
         <div class="h1 -expb">Check out the full<br /> <span class="-pink">PDF rulebook</span> here.</div>
-        <a class="btn btn--pink" href="#" target="_blank">Download Rules PDF</a>
+        <a class="btn btn--pink" href="/assets/pdf/FlamingOs_Game_Rules_Web.pdf" target="_blank">Download Rules PDF</a>
     </div>
 </div>
