@@ -28,10 +28,6 @@
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 (-($padding-1 / 2));
-
-    // @include respond( $break-laptop-medium ) {
-    //     justify-content: space-around;
-    // }
 }
 .events__listing {
     display: inline-block;
@@ -81,12 +77,16 @@
 .decks {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    // overflow-y: hidden;
-    // overflow-x: hidden;
     white-space: nowrap;
     position: relative;
     user-select: none;
+    min-height: 480px;
+    justify-content: center;
+
+    &.is-loaded {
+        min-height: auto;
+        justify-content: flex-start;
+    }
 }
 .decks__belt {
     transition: transform $base-duration $ease;
@@ -105,6 +105,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 0;
+    transition: opacity $base-duration $ease;
+
+    .is-loaded & {
+        opacity: 1;
+    }
 }
 .decks__left,
 .decks__right {
@@ -139,10 +145,14 @@
     padding: 0 ($baseunit);
     box-sizing: content-box;
     white-space: normal;
-    opacity: 0.5;
+    opacity: 0;
     transform: translate3d( 0, 0, 0 );
     transition: opacity $base-duration $ease,
                 transform $base-duration $ease;
+
+    .is-loaded & {
+        opacity: 0.5;
+    }
 
     @include respond( $break-tablet-full ) {
         width: 224px;
@@ -213,6 +223,39 @@
         .p {
             color: $sunrise;
         }
+    }
+    &[data-card="tropical-flame"] {
+        color: $tropical;
+    }
+    &[data-card="sunrise-flame"] {
+        color: $sunrise;
+    }
+    &[data-card="heatwave-flame"] {
+        color: $heatwave;
+    }
+    &[data-card="sunset-flame"] {
+        color: $sunset;
+    }
+    &[data-card="paradise-flame"] {
+        color: $paradise;
+    }
+    &[data-card="daybreak-flame"] {
+        color: $daybreak;
+    }
+    &[data-card="palmtree-flame"] {
+        color: $palmtree;
+    }
+    &[data-card="seafoam-flame"] {
+        color: $seafoam;
+    }
+    &[data-card="ocean-flame"] {
+        color: $ocean;
+    }
+    &[data-card="beachtowel-flame"] {
+        color: $beachtowel;
+    }
+    &[data-card="deepsea-flame"] {
+        color: $deepsea;
     }
 }
 .deck__card__graphic {}

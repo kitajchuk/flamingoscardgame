@@ -25,11 +25,15 @@ class Decks {
         };
 
         this.bind();
-        this.move();
     }
 
 
     bind () {
+        this.view.imageLoader.on( "done", () => {
+            this.view.element.addClass( "is-loaded" );
+            this.move();
+        });
+
         this.resizer.on( "resize", () => {
             if ( ((window.innerWidth < this.breaks.tablet.width) && !this.breaks.tablet.hit) ) {
                 this.breaks.tablet.hit = true;

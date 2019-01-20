@@ -3,7 +3,9 @@
         <div class="h1">Get tropical with <span class="-pink">FlamingOs</span>!<br /> Pair, swoop, block, and steal to win!</div>
     </div>
     <div class="home__gallery">
-        <div class="decks js-decks js-view" data-url="/decks/" data-uid="decks" data-component="Decks"></div>
+        <div class="decks js-decks js-view" data-url="/decks/" data-uid="decks" data-component="Decks">
+            {@|apply svg-loading.block}
+        </div>
     </div>
     <div class="home__action -wrap -exp2">
         <div class="h1">A card game launching on<br /> <span class="-pink">Kickstarter March 19th!</span></div>
