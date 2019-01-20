@@ -7,7 +7,7 @@ export default ( view ) => {
         return `
             <div class="events__listing">
                 <a class="events__listing__img" href="${event.sourceUrl}">
-                    <img class="image js-lazy-image" data-img-src="${event.assetUrl}" data-variants="${event.systemDataVariants}" data-original-size="${event.originalSize}" />
+                    <img class="image js-lazy-image" data-img-src="${event.assetUrl}" data-variants="${event.systemDataVariants}" data-original-size="${event.originalSize}" data-upres="1" />
                 </a>
                 <div class="events__listing__info h2">
                     ${event.excerpt}

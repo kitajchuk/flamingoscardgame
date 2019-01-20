@@ -8,7 +8,7 @@ class Decks {
     constructor ( view ) {
         this.view = view;
         this.curr = 2;
-        this.belt =  this.view.element.find( ".js-decks-belt" );
+        this.belt = this.view.element.find( ".js-decks-belt" );
         this.right = this.view.element.find( ".js-decks-right" );
         this.left = this.view.element.find( ".js-decks-left" );
         this.cards = this.view.element.find( ".js-decks-card" );

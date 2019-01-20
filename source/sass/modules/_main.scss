@@ -15,13 +15,6 @@
 
 
 
-.fpo {
-    border: 1px solid $grey;
-    color: $grey;
-}
-
-
-
 .events {
     display: flex;
     align-items: flex-start;
@@ -70,6 +63,50 @@
 }
 .events__listing__info {
     padding: $baseunit 0;
+}
+
+
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+    min-height: 250px;
+    width: 100%;
+
+    &.is-loaded {
+        min-height: auto;
+    }
+
+    @include respond( $break-mobile-medium ) {
+        overflow-y: hidden;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.cards__belt {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d( 0, 0, 0 );
+    transition: opacity $base-duration $ease,
+                transform $base-duration $ease;
+
+    .is-loaded & {
+        opacity: 1;
+    }
+}
+.cards__card {
+    display: inline-block;
+    width: 180px;
+    margin: 0 $baseunit;
+
+    @include respond( $mobile-breakpoint ) {
+        width: 160px;
+        margin: 0 ($baseunit / 2);
+    }
 }
 
 
