@@ -28,6 +28,11 @@
         font-size: $m-size;
     }
 }
+@mixin m() {
+    font-size: $m-size;
+    line-height: $p-line;
+    @include font-family();
+}
 @mixin h1() {
     font-size: $h1-size;
     line-height: $h1-line;
@@ -107,8 +112,8 @@
     padding-bottom: $expander-2;
 
     @include respond( $mobile-breakpoint ) {
-        padding-top: $expander-2 + $expander-1;
-        padding-bottom: $expander-2 + $expander-1;
+        padding-top: $expander-2 * 2;
+        padding-bottom: $expander-2 * 2;
     }
 }
 @mixin expb() {

@@ -8,6 +8,12 @@ p, .p {
         @include respond( $mobile-breakpoint  ) {
             display: none;
         }
+
+        .footer & {
+            @include respond( $mobile-breakpoint  ) {
+                display: block;
+            }
+        }
     }
 }
 

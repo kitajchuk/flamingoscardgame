@@ -27,14 +27,14 @@
     padding-top: $expander-2;
 
     @include respond( $mobile-breakpoint ) {
-        padding-top: $expander-2 + $expander-1;
+        padding-top: $expander-2 * 2;
     }
 }
 .-exp2b {
     padding-bottom: $expander-2;
 
     @include respond( $mobile-breakpoint ) {
-        padding-bottom: $expander-2 + $expander-1;
+        padding-bottom: $expander-2 * 2;
     }
 }
 .-vtop {
