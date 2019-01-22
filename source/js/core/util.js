@@ -166,7 +166,7 @@ const loadImages = function ( images, handler ) {
         // http://developers.squarespace.com/using-the-imageloader/
         // Depending on the original upload size, we have these variants
         // {original, 1500w, 1000w, 750w, 500w, 300w, 100w}
-        const width = (image[ 0 ].clientWidth || image[ 0 ].parentNode.clientWidth || window.innerWidth);
+        const width = (data.upres && window.innerWidth <= config.mobileMediaHack) ? window.innerWidth : (image[ 0 ].clientWidth || image[ 0 ].parentNode.clientWidth || window.innerWidth);
         const source = data.imgSrc.replace( rQuery, "" );
 
         // Pre-process portrait vs landscape using originalSize
@@ -196,14 +196,23 @@ const loadImages = function ( images, handler ) {
                 variant = getClosestValue( vars, variant );
             };
 
+            console.log( "START" );
+            console.log( width );
+            console.log( variant );
+
             // If the pixel density is higher, use a larger image ?
             if ( window.devicePixelRatio > 1 ) {
                 upres();
             }
 
+            console.log( variant );
+
             if ( data.upres ) {
                 upres();
             }
+
+            console.log( variant );
+            console.log( "END" );
 
             image.attr( config.lazyImageAttr, `${source}?format=${variant}w` );
         }
