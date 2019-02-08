@@ -387,6 +387,13 @@
 // Social
 .social-link {
     margin: 0 16px;
+    display: inline-block;
+    vertical-align: middle;
+
+    img {
+        width: auto;
+        height: 40px;
+    }
 }
 
 

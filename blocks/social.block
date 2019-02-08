@@ -1,6 +1,9 @@
 <div class="social">
+    <a href="https://boardgamegeek.com/boardgame/269710/flamingos-card-game" title="BoardGameGeek" target="_blank" class="social-link social-link--bgg">
+        <img class="social__link__img" src="/assets/img/BGG.png" />
+    </a>
     {.repeated section website.socialAccounts}
-        <a href="{profileUrl}" target="_blank" class="social-link social-link--{serviceName}">
+        <a href="{profileUrl}" target="_blank" title="{serviceName}" class="social-link social-link--{serviceName}">
             {.equal? serviceName "instagram"}
                 {@|apply svg-instagram.block}
             {.or equal? serviceName "facebook"}

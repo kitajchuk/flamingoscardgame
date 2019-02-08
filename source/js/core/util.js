@@ -196,23 +196,23 @@ const loadImages = function ( images, handler ) {
                 variant = getClosestValue( vars, variant );
             };
 
-            console.log( "START" );
-            console.log( width );
-            console.log( variant );
+            // console.log( "START" );
+            // console.log( width );
+            // console.log( variant );
 
             // If the pixel density is higher, use a larger image ?
             if ( window.devicePixelRatio > 1 ) {
                 upres();
             }
 
-            console.log( variant );
+            // console.log( variant );
 
             if ( data.upres ) {
                 upres();
             }
 
-            console.log( variant );
-            console.log( "END" );
+            // console.log( variant );
+            // console.log( "END" );
 
             image.attr( config.lazyImageAttr, `${source}?format=${variant}w` );
         }
